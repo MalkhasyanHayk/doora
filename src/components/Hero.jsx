@@ -16,6 +16,9 @@ import logoHuffpost from '@/images/logos/huffpost.svg'
 import logoTechcrunch from '@/images/logos/techcrunch.svg'
 import logoWired from '@/images/logos/wired.svg'
 
+import Lion from "../images/btns/lionsbyte.png"
+import Tst from "../images/btns/tst.png"
+
 function BackgroundIllustration(props) {
     let id = useId()
 
@@ -76,8 +79,8 @@ function BackgroundIllustration(props) {
                         y2="913"
                         gradientUnits="userSpaceOnUse"
                     >
-                        <stop stopColor="#06b6d4"/>
-                        <stop offset="1" stopColor="#06b6d4" stopOpacity="0"/>
+                        <stop stopColor="#e44d4d"/>
+                        <stop offset="1" stopColor="#e44d4d" stopOpacity="0"/>
                     </linearGradient>
                 </defs>
             </svg>
@@ -114,13 +117,28 @@ export function Hero() {
                             äußerst flexibel und effizient macht.
                         </p>
                         <div className="mt-8 flex flex-wrap gap-x-6 gap-y-4">
-                            <AppStoreLink/>
+                            {/*<AppStoreLink/>*/}
                             <Button
-                                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                                href="https://www.lionsbyte.ch"
                                 variant="outline"
+                                className={"p-0"}
                             >
-                                <PlayIcon className="h-6 w-6 flex-none"/>
-                                <span className="ml-2.5">Watch the video</span>
+                                <div style={{width: 134, height: 30, position: "relative"}}>
+                                    <Image src={Lion.src} alt={"lion"} fill objectFit={"contain"}/>
+                                </div>
+                                {/*<PlayIcon className="h-6 w-6 flex-none"/>*/}
+                                {/*<span className="ml-2.5">Watch the video</span>*/}
+                            </Button>
+                            <Button
+                                href="https://www.tstgmbh.ch"
+                                variant="outline"
+                                className={"p-0"}
+                            >
+                                <div style={{width: 134, height: 30, position: "relative"}}>
+                                    <Image src={Tst.src} alt={"lion"} fill objectFit={"contain"}/>
+                                </div>
+                                {/*<PlayIcon className="h-6 w-6 flex-none"/>*/}
+                                {/*<span className="ml-2.5">Watch the video</span>*/}
                             </Button>
                         </div>
                     </div>
