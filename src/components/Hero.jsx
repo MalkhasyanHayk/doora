@@ -1,23 +1,14 @@
 import {useId} from 'react'
 import Image from 'next/image'
-import clsx from 'clsx'
 
 import {AppDemo} from '@/components/AppDemo'
 import {AppStoreLink} from '@/components/AppStoreLink'
 import {Button} from '@/components/Button'
 import {Container} from '@/components/Container'
 import {PhoneFrame} from '@/components/PhoneFrame'
-import logoBbc from '@/images/logos/bbc.svg'
-import logoCbs from '@/images/logos/cbs.svg'
-import logoCnn from '@/images/logos/cnn.svg'
-import logoFastCompany from '@/images/logos/fast-company.svg'
-import logoForbes from '@/images/logos/forbes.svg'
-import logoHuffpost from '@/images/logos/huffpost.svg'
-import logoTechcrunch from '@/images/logos/techcrunch.svg'
-import logoWired from '@/images/logos/wired.svg'
 
-import Lion from "../images/btns/lionsbyte.png"
-import Tst from "../images/btns/tst.png"
+import Lion from "../images/logos/lionsbyte.png"
+import Tst from "../images/logos/tst.png"
 
 function BackgroundIllustration(props) {
     let id = useId()
@@ -117,28 +108,14 @@ export function Hero() {
                             äußerst flexibel und effizient macht.
                         </p>
                         <div className="mt-8 flex flex-wrap gap-x-6 gap-y-4">
-                            {/*<AppStoreLink/>*/}
+                            <AppStoreLink/>
                             <Button
-                                href="https://www.lionsbyte.ch"
+                                href="#"
                                 variant="outline"
                                 className={"p-0"}
                             >
-                                <div style={{width: 134, height: 30, position: "relative"}}>
-                                    <Image src={Lion.src} alt={"lion"} fill objectFit={"contain"}/>
-                                </div>
-                                {/*<PlayIcon className="h-6 w-6 flex-none"/>*/}
-                                {/*<span className="ml-2.5">Watch the video</span>*/}
-                            </Button>
-                            <Button
-                                href="https://www.tstgmbh.ch"
-                                variant="outline"
-                                className={"p-0"}
-                            >
-                                <div style={{width: 134, height: 30, position: "relative"}}>
-                                    <Image src={Tst.src} alt={"lion"} fill objectFit={"contain"}/>
-                                </div>
-                                {/*<PlayIcon className="h-6 w-6 flex-none"/>*/}
-                                {/*<span className="ml-2.5">Watch the video</span>*/}
+                                <PlayIcon className="h-6 w-6 flex-none"/>
+                                <span className="ml-2.5">Schau dir das Video an</span>
                             </Button>
                         </div>
                     </div>
@@ -161,17 +138,13 @@ export function Hero() {
                             className="mx-auto mt-8 flex max-w-xl flex-wrap justify-center gap-x-10 gap-y-8 lg:mx-0 lg:justify-start"
                         >
                             {[
-                                ['Forbes', logoForbes],
-                                ['TechCrunch', logoTechcrunch],
-                                ['Wired', logoWired],
-                                ['CNN', logoCnn, 'hidden xl:block'],
-                                ['BBC', logoBbc],
-                                ['CBS', logoCbs],
-                                ['Fast Company', logoFastCompany],
-                                ['HuffPost', logoHuffpost, 'hidden xl:block'],
-                            ].map(([name, logo, className]) => (
-                                <li key={name} className={clsx('flex', className)}>
-                                    <Image src={logo} alt={name} className="h-8" unoptimized/>
+                                ['Forbes', Lion, "https://www.lionsbyte.ch"],
+                                ['TechCrunch', Tst, "https://www.tstgmbh.ch"],
+                            ].map(([name, logo, address]) => (
+                                <li key={name} className={"flex"}>
+                                    <a href={address} style={{position: "relative", width: 134, height: 30}}>
+                                        <Image src={logo} alt={name} fill objectFit={"contain"} unoptimized/>
+                                    </a>
                                 </li>
                             ))}
                         </ul>
